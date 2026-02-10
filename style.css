@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'PPFrama-Black';
+    src: url('./fonts/PPFrama-Black.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    font-family: 'PPFrama-Black', sans-serif;
+    margin: 0;
+    font-size: 65px;
+    color: hotpink;
+}
+
+body {
+    font-family: 'PPFrama-Black', sans-serif;
+    margin: 0;
+
+}
