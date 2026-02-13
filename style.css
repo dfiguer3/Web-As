@@ -27,3 +27,19 @@ position: fixed;
 bottom: 20px;
 white-space: nowrap;
 }
+
+.whitebox {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  filter: blur(2px);
+  opacity: 0.5;
+  border-radius: 50%;
+
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.whitebox:hover {
+  transform: scale(1.2);
+}
