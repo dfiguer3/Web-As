@@ -18,25 +18,12 @@ body {
 }
 
 .header {
-    font-family: 'PPFrama-Black', sans-serif;
-    margin: 0;
-    font-size: 100px;
-    color: hotpink;
-    line-height: 88px;
-}
+font-family: 'PPFrama-Black', sans-serif; 
+margin: 0; 
+font-size: clamp(2rem, 10vw, 8rem); 
+color: red; line-height: 10vw; 
 
-.Dani {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;  /* Add this */
-    height: 200px; /* Add this */
-}
-
-.Dani img {
-    width: 100%;      /* Make image fit container */
-    height: 100%;     /* Make image fit container */
-    object-fit: contain; /* Maintain aspect ratio */
-    mix-blend-mode: screen; /* This can help hide white backgrounds */
+position: fixed; 
+bottom: 20px;
+white-space: nowrap;
 }
