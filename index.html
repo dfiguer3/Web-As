@@ -14,9 +14,60 @@
       WEB AS <u>MOVEMENT</u>
     </h1>
 
-<div class="whitebox">
-  
+<div class="whitebox"></div>
+
+<div class="bar">
+  <div id="container">
+    <div class="scroll">
+      <img src="assets/dani.png" alt="">
+      <img src="assets/cattrans.png" alt="">
+      <img src="assets/legotrans.png" alt="">
+      <img src="assets/hobietrans.png" alt="">
+      <img src="assets/dani.png" alt="">
+      <img src="assets/cattrans.png" alt="">
+      <img src="assets/legotrans.png" alt="">
+      <img src="assets/hobietrans.png" alt="">
+      <img src="assets/dani.png" alt="">
+      <img src="assets/cattrans.png" alt="">
+      <img src="assets/legotrans.png" alt="">
+      <img src="assets/hobietrans.png" alt="">
+      <img src="assets/dani.png" alt="">
+      <img src="assets/cattrans.png" alt="">
+      <img src="assets/legotrans.png" alt="">
+      <img src="assets/hobietrans.png" alt="">
+      <img src="assets/dani.png" alt="">
+      <img src="assets/cattrans.png" alt="">
+      <img src="assets/legotrans.png" alt="">
+      <img src="assets/hobietrans.png" alt="">
+      <img src="assets/dani.png" alt="">
+      <img src="assets/cattrans.png" alt="">
+    </div>
+  </div>
 </div>
+
+<script>
+  const whitebox = document.querySelector('.whitebox');
+  let isDragging = false;
+  let offsetX, offsetY;
+
+  whitebox.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    offsetX = e.clientX - whitebox.offsetLeft;
+    offsetY = e.clientY - whitebox.offsetTop;
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+      whitebox.style.left = (e.clientX - offsetX) + 'px';
+      whitebox.style.top = (e.clientY - offsetY) + 'px';
+    }
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+</script>
+
 
   </body>
 </html>

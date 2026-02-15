@@ -1,45 +1,94 @@
 @font-face {
-    font-family: 'PPFrama-Black';
-    src: url('./fonts/PPFrama-Black.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'PPFrama-Black';
+  src: url('./fonts/PPFrama-Black.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'PPFrama-Black', sans-serif;
-    margin: 0;
-
+  font-family: 'PPFrama-Black', sans-serif;
+  margin: 0;
+  user-select: none;
 }
 
 .header {
-font-family: 'PPFrama-Black', sans-serif; 
-margin: 0; 
-font-size: clamp(2rem, 10vw, 8rem); 
-color: red; line-height: 10vw; 
-
-position: fixed; 
-bottom: 20px;
-white-space: nowrap;
+  font-family: 'PPFrama-Black', sans-serif; 
+  margin: 0; 
+  font-size: clamp(2rem, 10vw, 8rem); 
+  color: red; 
+  line-height: 10vw; 
+  position: absolute; 
+  bottom: 20px;
+  white-space: nowrap;
 }
 
+/* DRAG THE CIRCLE */
 .whitebox {
   width: 100px;
   height: 100px;
+  position: absolute;
+  bottom: 35px;
+  right: 80px;
   background-color: white;
   filter: blur(2px);
   opacity: 0.5;
   border-radius: 50%;
-
   transition: transform 0.3s ease;
-  cursor: pointer;
+  cursor: grab;
 }
 
 .whitebox:hover {
   transform: scale(1.2);
+}
+
+.whitebox:active {
+  cursor: grabbing;
+}
+
+/* SCROLLING BAR */
+.bar {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+
+  align-items: center;
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+}
+ 
+#container { 
+  position: relative; 
+  width: 100%; 
+  height: 100%; 
+}
+ 
+#container .scroll {
+  display: flex;
+  align-items: center;
+  animation: scroll 4s linear infinite;
+}
+ 
+#container .scroll img {
+  height: 150px;
+  margin-right: 2rem;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.8));
+}
+ 
+.bar:hover .scroll { 
+  animation-play-state: paused; 
+}
+ 
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
