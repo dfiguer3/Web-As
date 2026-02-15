@@ -33,8 +33,6 @@ body {
   width: 100px;
   height: 100px;
   position: absolute;
-  bottom: 35px;
-  right: 80px;
   background-color: white;
   filter: blur(2px);
   opacity: 0.5;
@@ -51,10 +49,47 @@ body {
   cursor: grabbing;
 }
 
+
+
+    /* MEDIA QUERIE FOR WHITE BOX */
+    @media (min-width: 1200px) {
+      .whitebox {
+      bottom: 35px;
+      right: 80px;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1199px) {
+      .whitebox {
+        bottom: calc(10vw + 80px);
+        right: 40px;
+      }
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
+      .whitebox {
+        bottom: calc(10vw + 60px);
+        right: 30px;
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .whitebox {
+        bottom: 80px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+
+
 /* SCROLLING BAR */
 .bar {
   width: 100%;
-  height: 150px;
+  height: 200px;
   overflow: hidden;
   display: flex;
 
@@ -83,8 +118,8 @@ body {
   flex-shrink: 0;
   filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.8));
 }
- 
-.bar:hover .scroll { 
+
+#container .scroll:hover {
   animation-play-state: paused; 
 }
  
